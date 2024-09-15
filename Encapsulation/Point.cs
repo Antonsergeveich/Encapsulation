@@ -10,23 +10,43 @@ namespace Encapsulation
     {
         double x;
         double y;
-        public double X
+        //public double X
+        //{
+        //    get { return x; }
+        //    set
+        //    { //if(value...)...
+        //        x = value;      //value открывает доступ к переданному значению
+        //    }
+        //}
+        //Если фильтрация данных не требуется можно использовать авто свойства.
+        //При этом переменная член не объявляется явным образом,
+        //а компилятор создаёт её не явным образом при объявлении свойств
+        public double X { get; set; } // Автосвойства для 'X'
+        //public double Y { get { return y; } set { y = value; } }
+        public double Y { get; set; } // Автосвойства для 'Y'
+        //public double GetX()
+        //{ return x; }
+        //public double GetY() { return y; }
+        //public void SetX(double x) { this.x = x; } // В языке C# отсутствуют указатели, а следовательно отсутствует оператор '->'
+        //public void SetY(double y) { this.y = y; }
+
+        public Point(double x = 0, double y = 0)
         {
-            get { return x; }
-            set
-            { //if(value...)...
-                x = value;      //value открывает доступ к переданному значению
-            }
+            X = x;
+            Y = y;
+            Console.WriteLine($"Constructor:{ this.GetHashCode()}");
         }
-        public double Y { get { return y; } set { y = value; } }
-        public double GetX()
-        { return x; }
-        public double GetY() { return y; }
-        public void SetX(double x) { this.x = x; } // В языке C# отсутствуют указатели, а следовательно отсутствует оператор '->'
-        public void SetY(double y) { this.y = y; }
+        ~Point() //Destructor in C# is always private
+        {
+            Console.WriteLine($"Destructor:\t{this.GetHashCode()}");
+        }
+        //Когда на динамическую память не остаётся ни единой ссылки её грохает Garbage Collector
+        //Т.е. берёт эту динамическую память и помечает что она свободна,
+        //её можно использовать другим приложением;
+        //https://learn.microsoft.com/ru-ru/dotnet/standard/garbage-collection/fundamentals
 
         //           Methods:
-        public void Print() { Console.WriteLine($"X = {x}, Y = {y}"); }
+        public void Print() { Console.WriteLine($"X = {X}, Y = {Y}"); }
 
     }
 }
