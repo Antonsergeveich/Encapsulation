@@ -63,6 +63,7 @@ namespace Encapsulation
             double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
             return distance;
         }
+
     }
 }
 /*
