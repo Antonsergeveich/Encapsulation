@@ -40,6 +40,7 @@ namespace Encapsulation
         {
             Console.WriteLine($"Destructor:\t{this.GetHashCode()}");
         }
+        //https://learn.microsoft.com/ru-ru/dotnet/api/system.gc.collect?view=net-8.0
         //Когда на динамическую память не остаётся ни единой ссылки её грохает Garbage Collector
         //Т.е. берёт эту динамическую память и помечает что она свободна,
         //её можно использовать другим приложением;
