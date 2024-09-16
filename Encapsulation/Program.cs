@@ -25,7 +25,7 @@ namespace Encapsulation
            
             Point A = new Point(10,8);
             A.Print();
-            Point B = new Point(10,10);
+            Point B = new Point(10,12);
             B.Print();
             Console.WriteLine($"Расстояние от 'A' до 'B' = {A.Distance(B)}");
            
