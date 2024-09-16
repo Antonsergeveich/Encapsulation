@@ -47,7 +47,14 @@ namespace Encapsulation
 
         //           Methods:
         public void Print() { Console.WriteLine($"X = {X}, Y = {Y}"); }
-
+        public double distance(Point other) 
+        {
+            double x_distance = this.x - other.x;
+            double y_distance = this.y - other.y;
+            //https://learn.microsoft.com/ru-ru/dotnet/api/system.math?view=net-8.0
+            double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
+            return distance;
+        }
     }
 }
 /*
