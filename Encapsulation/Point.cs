@@ -56,6 +56,13 @@ namespace Encapsulation
             double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
             return distance;
         }
+        static public double Distance2(Point A, Point B)
+        {
+            double x_distance = A.X - B.X;
+            double y_distance = A.Y - B.Y;
+            double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
+            return distance;
+        }
     }
 }
 /*

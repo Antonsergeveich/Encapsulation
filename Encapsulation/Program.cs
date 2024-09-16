@@ -28,7 +28,16 @@ namespace Encapsulation
             Point B = new Point(10,12);
             B.Print();
             Console.WriteLine($"Расстояние от 'A' до 'B' = {A.Distance(B)}");
-           
+            Console.WriteLine($"Расстояние между точками 'A' и 'B' = {Distance2(A, B)}");
         }
+
+        static public double Distance2(Point A, Point B)
+        {
+            double x_distance = A.X - B.X;
+            double y_distance = A.Y - B.Y;
+            double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
+            return distance;
+        }
+       
     }
 }
