@@ -47,7 +47,7 @@ namespace Encapsulation
 
         //           Methods:
         public void Print() { Console.WriteLine($"X = {X}, Y = {Y}"); }
-        public double distance(Point other) 
+        public double Distance(Point other) 
         {
             double x_distance = this.x - other.x;
             double y_distance = this.y - other.y;
