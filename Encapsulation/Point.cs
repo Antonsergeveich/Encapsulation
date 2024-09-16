@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime;
 
 namespace Encapsulation
 {
@@ -49,8 +50,8 @@ namespace Encapsulation
         public void Print() { Console.WriteLine($"X = {X}, Y = {Y}"); }
         public double Distance(Point other) 
         {
-            double x_distance = this.x - other.x;
-            double y_distance = this.y - other.y;
+            double x_distance = this.X - other.X;
+            double y_distance = this.Y - other.Y;
             //https://learn.microsoft.com/ru-ru/dotnet/api/system.math?view=net-8.0
             double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
             return distance;
