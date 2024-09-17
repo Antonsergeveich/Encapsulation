@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encapsulation", "Encapsulation\Encapsulation.csproj", "{65D136BC-1FBA-46DD-8C42-4F39A8A115CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraction", "Fraction\Fraction.csproj", "{3A0D6C94-519A-4A16-AEFC-A113AA7CEE88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{65D136BC-1FBA-46DD-8C42-4F39A8A115CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65D136BC-1FBA-46DD-8C42-4F39A8A115CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65D136BC-1FBA-46DD-8C42-4F39A8A115CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0D6C94-519A-4A16-AEFC-A113AA7CEE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0D6C94-519A-4A16-AEFC-A113AA7CEE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0D6C94-519A-4A16-AEFC-A113AA7CEE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0D6C94-519A-4A16-AEFC-A113AA7CEE88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
