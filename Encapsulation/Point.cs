@@ -68,6 +68,17 @@ namespace Encapsulation
             obj.Y--;
             return obj;
         }
+        public static bool operator == (Point left, Point right)
+        {
+            return left.X == right.X && left.Y == right.Y;
+        }
+        public static bool operator != (Point left, Point right)
+        {
+            //return left.X != right.X && left.Y != right.Y;
+            //https://learn.microsoft.com/ru-ru/dotnet/api/system.object.equals?view=net-8.0
+            //return !left.Equals(right); 
+            return !(left == right);
+        }
 
         //https://learn.microsoft.com/ru-ru/dotnet/api/system.gc.collect?view=net-8.0
         //Когда на динамическую память не остаётся ни единой ссылки её грохает Garbage Collector

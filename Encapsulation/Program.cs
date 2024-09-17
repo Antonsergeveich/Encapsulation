@@ -51,8 +51,11 @@ namespace Encapsulation
             Point B = new Point(7, 8);
             Point C = new Point(A + B);
             C.Print();
-            for (Point i = new Point(); i.X < 10; ++i) { i.Print(); }
-            for (Point i = new Point(20,20); i.X > 10; --i) { i.Print(); }
+            Point n = new Point(10, 10);
+            for (Point i = new Point(); i != n; ++i) { i.Print(); }
+
+            //for (Point i = new Point(); i.X < 10; ++i) { i.Print(); }
+            //for (Point i = new Point(20,20); i.X > 10; --i) { i.Print(); }
 
         }
 
