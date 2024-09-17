@@ -33,8 +33,14 @@ namespace Fraction
             Fraction B = new Fraction(3, 4, 5);
             Fraction C = new Fraction(A * B);
             A.Print();
-            B.Print(); 
-            C.Print();   
+            B.Print();
+            C.Print();
+            Fraction D = A / B;
+            Console.Write($"Деление: \t "); D.Print();
+            C = A + B;
+            Console.Write($"Сложение: \t "); C.Print();
+            C = B - A;
+            Console.Write($"Вычитание: \t "); C.Print();
         }
     }
 }

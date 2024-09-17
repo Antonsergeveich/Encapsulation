@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -73,8 +74,62 @@ namespace Fraction
                 );
             return res;
         }
+        public static Fraction operator /(Fraction l, Fraction r)
+        {
+            return l.Division(r);
+        }
+        public static Fraction operator +(Fraction l, Fraction r)
+        {
+            return  l.Plus(r);    
+        }
+        public static Fraction operator -(Fraction l, Fraction r)
+        {
+            return l.Subtraction(r);
+        }
 
         //              Methods:
+        public Fraction Division(Fraction other)
+        {
+            if(Integer > 0)this.Improper();
+            if(other.Integer > 0)other.Improper();
+            int resNumerator = Numerator * other.Denominator;
+            int resDenominator = Denominator * other.Numerator;
+            return new Fraction(resNumerator,resDenominator);
+        }
+        public Fraction Plus(Fraction other)
+        {
+            if (Integer > 0) this.Improper();
+            if (other.Integer > 0) other.Improper();
+            int resNumerator;
+            int resDenominator = Denominator;
+            if (Denominator == other.Denominator) 
+            {
+                resNumerator = Numerator + other.Numerator;        
+            }
+            else 
+            {
+                resDenominator = Denominator * other.Denominator;
+                resNumerator = Numerator * other.Denominator + other.Numerator * Denominator;
+            }
+            return new Fraction(resNumerator, resDenominator);
+        }
+        public Fraction Subtraction(Fraction other)
+        {
+            if (Integer > 0) this.Improper();
+            if (other.Integer > 0) other.Improper();
+            int resNumerator;
+            int resDenominator = Denominator;
+            if (Denominator == other.Denominator)
+            {
+                resNumerator = Numerator - other.Numerator;
+            }
+            else
+            {
+                resDenominator = Denominator * other.Denominator;
+                resNumerator = Numerator * other.Denominator - other.Numerator * Denominator;
+            }
+            return new Fraction(resNumerator, resDenominator);
+        }
         Fraction Proper()
         {
             Fraction copy = new Fraction(this);
