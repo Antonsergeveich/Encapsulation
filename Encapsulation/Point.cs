@@ -34,12 +34,41 @@ namespace Encapsulation
         {
             X = x;
             Y = y;
-            Console.WriteLine($"Constructor:{ this.GetHashCode()}");
+            Console.WriteLine($"Constructor:{this.GetHashCode()}");
+        }
+        public Point(Point other)
+        {
+            this.X = other.X;
+            this.Y = other.Y;
+            Console.WriteLine($"CopyConstructor:{this.GetHashCode()}");
         }
         ~Point() //Destructor in C# is always private
         {
             Console.WriteLine($"Destructor:\t{this.GetHashCode()}");
         }
+
+        //            Operators:
+
+        public static Point operator+(Point left, Point right)
+        {
+            Point res = new Point();
+            res.X = left.X + right.X;
+            res.Y = left.Y + right.Y;
+            return res;
+        }
+        public static Point operator ++(Point obj)
+        {
+            obj.X++;
+            obj.Y++;
+            return obj;
+        }
+        public static Point operator --(Point obj)
+        {
+            obj.X--;
+            obj.Y--;
+            return obj;
+        }
+
         //https://learn.microsoft.com/ru-ru/dotnet/api/system.gc.collect?view=net-8.0
         //Когда на динамическую память не остаётся ни единой ссылки её грохает Garbage Collector
         //Т.е. берёт эту динамическую память и помечает что она свободна,
@@ -48,7 +77,7 @@ namespace Encapsulation
 
         //           Methods:
         public void Print() { Console.WriteLine($"X = {X}, Y = {Y}"); }
-        public double Distance(Point other) 
+        public double Distance(Point other)
         {
             double x_distance = this.X - other.X;
             double y_distance = this.Y - other.Y;
@@ -56,14 +85,14 @@ namespace Encapsulation
             double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
             return distance;
         }
-        static public double Distance2(Point A, Point B)
+
+        public static double Distance2(Point A, Point B)
         {
             double x_distance = A.X - B.X;
             double y_distance = A.Y - B.Y;
             double distance = Math.Sqrt(x_distance * x_distance + y_distance * y_distance);
             return distance;
         }
-
     }
 }
 /*
