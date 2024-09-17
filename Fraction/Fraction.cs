@@ -48,13 +48,45 @@ namespace Fraction
             this.Denominator = denominator;
             Console.WriteLine($"Constructor:\t{GetHashCode()}");
         }
+        public Fraction(Fraction other)
+        {
+            this.Integer=other.Integer;
+            this.Numerator=other.Numerator;
+            this.Denominator=other.Denominator;
+            Console.WriteLine($"CopyConstructor:{GetHashCode()}");
+        }
 
         ~Fraction()
         {
             Console.WriteLine($"Destructor:\t{GetHashCode()}");
         }
 
+        //              Operators:
+        public static Fraction operator* (Fraction left, Fraction right)
+        {
+            left.ToImproper();
+            right.ToImproper();
+            Fraction res = new Fraction
+                (
+                left.Numerator * right.Numerator,
+                left.Denominator * right.Denominator
+                );
+            return res;
+        }
+
         //              Methods:
+        Fraction ToProper()
+        {
+            Integer += Numerator / Denominator;
+            Numerator %= Denominator;
+            return this;
+        }
+        Fraction ToImproper() 
+        {
+            Numerator += Integer * Denominator;
+            Integer = 0;
+            return this;
+        }
         public void Print()
         {
             if (Integer != 0) Console.Write(Integer);
