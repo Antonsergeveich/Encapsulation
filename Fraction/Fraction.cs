@@ -67,5 +67,19 @@ namespace Fraction
             else if (Integer == 0) Console.Write(0);
             Console.WriteLine();
         }
+        public override string ToString()
+        {
+            // return base.ToString();
+            string print = "";
+            if (Integer != 0) print += Integer;
+            if (Numerator != 0)
+            {
+                if (Integer != 0) print += "(";
+                print += $"{Numerator} / {Denominator}";
+                if (Integer != 0) print += ")";
+            }
+            else if (Integer == 0) print += 0;
+            return print;
+        }
     }
 }
