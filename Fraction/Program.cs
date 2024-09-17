@@ -18,6 +18,9 @@ namespace Fraction
 
             Fraction C = new Fraction(1,2);
             C.Print();
+
+            Fraction D = new Fraction(2,3,4);
+            D.Print();
         }
     }
 }

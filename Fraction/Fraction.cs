@@ -41,6 +41,14 @@ namespace Fraction
             this.Denominator = denominator;
             Console.WriteLine($"Constructor:\t{GetHashCode()}");
         }
+        public Fraction(int integer, int numerator, int denominator) 
+        {
+            this.Integer=integer;
+            this.Numerator = numerator;
+            this.Denominator = denominator;
+            Console.WriteLine($"Constructor:\t{GetHashCode()}");
+        }
+
         ~Fraction()
         {
             Console.WriteLine($"Destructor:\t{GetHashCode()}");
@@ -49,7 +57,7 @@ namespace Fraction
         //              Methods:
         public void Print()
         {
-            if (Integer != 0) Console.WriteLine(Integer);
+            if (Integer != 0) Console.Write(Integer);
             if (Numerator != 0)
             {
                 if (Integer != 0) Console.Write("(");
