@@ -43,16 +43,16 @@ namespace Fraction
         }
         public Fraction(int integer, int numerator, int denominator) 
         {
-            this.Integer=integer;
+            this.Integer = integer;
             this.Numerator = numerator;
             this.Denominator = denominator;
             Console.WriteLine($"Constructor:\t{GetHashCode()}");
         }
         public Fraction(Fraction other)
         {
-            this.Integer=other.Integer;
-            this.Numerator=other.Numerator;
-            this.Denominator=other.Denominator;
+            this.Integer = other.Integer;
+            this.Numerator = other.Numerator;
+            this.Denominator = other.Denominator;
             Console.WriteLine($"CopyConstructor:{GetHashCode()}");
         }
 
@@ -62,10 +62,10 @@ namespace Fraction
         }
 
         //              Operators:
-        public static Fraction operator* (Fraction left, Fraction right)
+        public static Fraction operator* (Fraction l, Fraction r)
         {
-            left.ToImproper();
-            right.ToImproper();
+            Fraction left = l.Improper();
+            Fraction right = r.Improper();
             Fraction res = new Fraction
                 (
                 left.Numerator * right.Numerator,
@@ -75,17 +75,19 @@ namespace Fraction
         }
 
         //              Methods:
-        Fraction ToProper()
+        Fraction Proper()
         {
-            Integer += Numerator / Denominator;
-            Numerator %= Denominator;
-            return this;
+            Fraction copy = new Fraction(this);
+            copy.Integer += copy.Numerator / copy.Denominator;
+            copy.Numerator %= copy.Denominator;
+            return copy;
         }
-        Fraction ToImproper() 
+        Fraction Improper() 
         {
-            Numerator += Integer * Denominator;
-            Integer = 0;
-            return this;
+            Fraction copy = new Fraction(this);
+            copy.Numerator += copy.Integer * copy.Denominator;
+            copy.Integer = 0;
+            return copy;
         }
         public void Print()
         {
