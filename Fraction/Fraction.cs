@@ -75,6 +75,11 @@ namespace Fraction
                 );
             return res;
         }
+        public static Fraction operator* (Fraction l, int value)
+        {
+            Fraction res = new Fraction(value * l.Numerator, l.Denominator);
+            return res;
+        }
         public static Fraction operator /(Fraction l, Fraction r)
         {
             Fraction left = l.Improper();
@@ -127,11 +132,7 @@ namespace Fraction
             obj.Integer--;
             return obj;
         }
-        //public static Fraction operator +=(Fraction obj)
-        //{
-        //    this.Improper();
-        //    this.Numerator = this.Numerator + obj.Numerator;
-        //}
+        //https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/operators/operator-overloading
         public static bool operator ==(Fraction left, Fraction right)
             => (left.Numerator/left.Denominator == right.Numerator/right.Denominator); 
         public static bool operator !=(Fraction left, Fraction right)

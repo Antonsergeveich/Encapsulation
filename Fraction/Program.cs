@@ -38,18 +38,22 @@ namespace Fraction
             B.Print();
             C.Print();
             Console.WriteLine($"Умножение: \t{E = B * A}");
+            Console.WriteLine($"Умножение: \t{E = B * 2}");
             Console.WriteLine($"Деление: \t{D = A / B} ");
             Console.WriteLine($"Сложение: \t{C = A + B}"); 
             Console.WriteLine($"Вычитание: \t{C = B - A}");
-            Console.WriteLine($"Increment =\t{A++}");
-            Console.WriteLine($"Decrement =\t{--A}");
-            Console.WriteLine($"==\t{A == C}");
-            Console.WriteLine($"!=\t{A != C}");
-            Console.WriteLine($">\t{A > C}");
-            Console.WriteLine($"<\t{A < C}");
-            Console.WriteLine($">=\t{A >= C}");
-            Console.WriteLine($"<=\t{A <= C}");
-
+            Console.WriteLine($"Increment = \t{A++}");
+            Console.WriteLine($"Decrement = \t{--A}");
+            Console.WriteLine($" += \t{A += B}");
+            Console.WriteLine($" -= \t{A -= B}");
+            Console.WriteLine($" *= \t{A *= B}");
+            Console.WriteLine($" /= \t{A /= B}");
+            Console.WriteLine($" == \t{A == C}");
+            Console.WriteLine($" != \t{A != C}");
+            Console.WriteLine($" >  \t{A > C}");
+            Console.WriteLine($" <  \t{A < C}");
+            Console.WriteLine($" >= \t{A >= C}");
+            Console.WriteLine($" <= \t{A <= C}");
         }
     }
 }
