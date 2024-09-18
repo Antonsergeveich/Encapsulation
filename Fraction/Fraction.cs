@@ -93,13 +93,10 @@ namespace Fraction
         //    int resDenominator = left.Denominator * right.Numerator;
         //    return new Fraction(resNumerator, resDenominator);
         //}
-
-
         public static Fraction operator /(Fraction l, Fraction r)
         {
             return l * r.Inverted();
         }
-
         public static Fraction operator +(Fraction l, Fraction r)
         {
             Fraction left = l.Improper();
