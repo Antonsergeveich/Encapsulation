@@ -76,43 +76,43 @@ namespace Fraction
         }
         public static Fraction operator /(Fraction l, Fraction r)
         {
-            if (l.Integer > 0) l.Improper();
-            if (r.Integer > 0) r.Improper();
-            int resNumerator = l.Numerator * r.Denominator;
-            int resDenominator = l.Denominator * r.Numerator;
+            Fraction left = l.Improper();
+            Fraction right = r.Improper();
+            int resNumerator = left.Numerator * right.Denominator;
+            int resDenominator = left.Denominator * right.Numerator;
             return new Fraction(resNumerator, resDenominator);
         }
         public static Fraction operator +(Fraction l, Fraction r)
         {
-            if (l.Integer > 0) l.Improper();
-            if (r.Integer > 0) r.Improper();
+            Fraction left = l.Improper();
+            Fraction right = r.Improper();
             int resNumerator;
-            int resDenominator = l.Denominator;
-            if (l.Denominator == r.Denominator)
+            int resDenominator = left.Denominator;
+            if (left.Denominator == right.Denominator)
             {
-                resNumerator = l.Numerator + r.Numerator;
+                resNumerator = left.Numerator + right.Numerator;
             }
             else
             {
-                resDenominator = l.Denominator * r.Denominator;
-                resNumerator = l.Numerator * r.Denominator + r.Numerator * l.Denominator;
+                resDenominator = left.Denominator * right.Denominator;
+                resNumerator = left.Numerator * right.Denominator + right.Numerator * left.Denominator;
             }
             return new Fraction(resNumerator, resDenominator);
         }
         public static Fraction operator -(Fraction l, Fraction r)
         {
-            if (l.Integer > 0) l.Improper();
-            if (r.Integer > 0) r.Improper();
+            Fraction left = l.Improper();
+            Fraction right = r.Improper();
             int resNumerator;
-            int resDenominator = l.Denominator;
-            if (l.Denominator == r.Denominator)
+            int resDenominator = left.Denominator;
+            if (l.Denominator == right.Denominator)
             {
-                resNumerator = l.Numerator - r.Numerator;
+                resNumerator = left.Numerator - right.Numerator;
             }
             else
             {
-                resDenominator = l.Denominator * r.Denominator;
-                resNumerator = l.Numerator * r.Denominator - r.Numerator * l.Denominator;
+                resDenominator = left.Denominator * right.Denominator;
+                resNumerator = left.Numerator * right.Denominator - right.Numerator * left.Denominator;
             }
             return new Fraction(resNumerator, resDenominator);
         }
