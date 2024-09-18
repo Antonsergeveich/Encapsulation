@@ -43,7 +43,12 @@ namespace Fraction
             Console.WriteLine($"Вычитание: \t{C = B - A}");
             Console.WriteLine($"Increment =\t{A++}");
             Console.WriteLine($"Decrement =\t{--A}");
-
+            Console.WriteLine($"==\t{A == C}");
+            Console.WriteLine($"!=\t{A != C}");
+            Console.WriteLine($">\t{A > C}");
+            Console.WriteLine($"<\t{A < C}");
+            Console.WriteLine($">=\t{A >= C}");
+            Console.WriteLine($"<=\t{A <= C}");
 
         }
     }
