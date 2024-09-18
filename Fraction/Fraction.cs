@@ -157,30 +157,30 @@ namespace Fraction
                 left.Improper().Numerator * right.Improper().Denominator <
                 right.Improper().Numerator * left.Improper().Denominator;
         }
-        public static bool operator ==(Fraction left, Fraction right)
-        {
-            return
-                left.Improper().Numerator * right.Improper().Denominator ==
-                right.Improper().Numerator * left.Improper().Denominator;
-        }
-        public static bool operator !=(Fraction left, Fraction right)
-        {
-            return
-                left.Improper().Numerator * right.Improper().Denominator !=
-                right.Improper().Numerator * left.Improper().Denominator;
-        }
         //public static bool operator ==(Fraction left, Fraction right)
-        //    => (left.Numerator / left.Denominator == right.Numerator / right.Denominator);
+        //{
+        //    return
+        //        left.Improper().Numerator * right.Improper().Denominator ==
+        //        right.Improper().Numerator * left.Improper().Denominator;
+        //}
         //public static bool operator !=(Fraction left, Fraction right)
-        //    => (left.Numerator / left.Denominator != right.Numerator / right.Denominator);
+        //{
+        //    return
+        //        left.Improper().Numerator * right.Improper().Denominator !=
+        //        right.Improper().Numerator * left.Improper().Denominator;
+        //}
+        public static bool operator ==(Fraction left, Fraction right)
+            => ((double)left.Numerator / (double)left.Denominator == (double)right.Numerator / (double)right.Denominator);
+        public static bool operator !=(Fraction left, Fraction right)
+            => ((double)left.Numerator / (double)left.Denominator != (double)right.Numerator / (double)right.Denominator);
         //public static bool operator >(Fraction left, Fraction right)
         //    => (left.Numerator / left.Denominator > right.Numerator / right.Denominator);
         //public static bool operator <(Fraction left, Fraction right)
         //    => (left.Numerator / left.Denominator < right.Numerator / right.Denominator);
         public static bool operator >=(Fraction left, Fraction right)
-            => (left > right || left == right);
+            => !(left < right);//(left > right || left == right);
         public static bool operator <=(Fraction left, Fraction right)
-            => (left < right || left == right);
+            => !(left > right);//(left < right || left == right);
         //              Methods:
         Fraction Proper()
         {
