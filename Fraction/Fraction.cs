@@ -76,60 +76,48 @@ namespace Fraction
         }
         public static Fraction operator /(Fraction l, Fraction r)
         {
-            return l.Division(r);
+            if (l.Integer > 0) l.Improper();
+            if (r.Integer > 0) r.Improper();
+            int resNumerator = l.Numerator * r.Denominator;
+            int resDenominator = l.Denominator * r.Numerator;
+            return new Fraction(resNumerator, resDenominator);
         }
         public static Fraction operator +(Fraction l, Fraction r)
         {
-            return  l.Plus(r);    
-        }
-        public static Fraction operator -(Fraction l, Fraction r)
-        {
-            return l.Subtraction(r);
-        }
-
-        //              Methods:
-        public Fraction Division(Fraction other)
-        {
-            if(Integer > 0)this.Improper();
-            if(other.Integer > 0)other.Improper();
-            int resNumerator = Numerator * other.Denominator;
-            int resDenominator = Denominator * other.Numerator;
-            return new Fraction(resNumerator,resDenominator);
-        }
-        public Fraction Plus(Fraction other)
-        {
-            if (Integer > 0) this.Improper();
-            if (other.Integer > 0) other.Improper();
+            if (l.Integer > 0) l.Improper();
+            if (r.Integer > 0) r.Improper();
             int resNumerator;
-            int resDenominator = Denominator;
-            if (Denominator == other.Denominator) 
+            int resDenominator = l.Denominator;
+            if (l.Denominator == r.Denominator)
             {
-                resNumerator = Numerator + other.Numerator;        
-            }
-            else 
-            {
-                resDenominator = Denominator * other.Denominator;
-                resNumerator = Numerator * other.Denominator + other.Numerator * Denominator;
-            }
-            return new Fraction(resNumerator, resDenominator);
-        }
-        public Fraction Subtraction(Fraction other)
-        {
-            if (Integer > 0) this.Improper();
-            if (other.Integer > 0) other.Improper();
-            int resNumerator;
-            int resDenominator = Denominator;
-            if (Denominator == other.Denominator)
-            {
-                resNumerator = Numerator - other.Numerator;
+                resNumerator = l.Numerator + r.Numerator;
             }
             else
             {
-                resDenominator = Denominator * other.Denominator;
-                resNumerator = Numerator * other.Denominator - other.Numerator * Denominator;
+                resDenominator = l.Denominator * r.Denominator;
+                resNumerator = l.Numerator * r.Denominator + r.Numerator * l.Denominator;
             }
             return new Fraction(resNumerator, resDenominator);
         }
+        public static Fraction operator -(Fraction l, Fraction r)
+        {
+            if (l.Integer > 0) l.Improper();
+            if (r.Integer > 0) r.Improper();
+            int resNumerator;
+            int resDenominator = l.Denominator;
+            if (l.Denominator == r.Denominator)
+            {
+                resNumerator = l.Numerator - r.Numerator;
+            }
+            else
+            {
+                resDenominator = l.Denominator * r.Denominator;
+                resNumerator = l.Numerator * r.Denominator - r.Numerator * l.Denominator;
+            }
+            return new Fraction(resNumerator, resDenominator);
+        }
+
+        //              Methods:
         Fraction Proper()
         {
             Fraction copy = new Fraction(this);
