@@ -116,6 +116,16 @@ namespace Fraction
             }
             return new Fraction(resNumerator, resDenominator);
         }
+        public static Fraction operator ++(Fraction obj)
+        {
+            obj.Integer++;
+            return obj;
+        }
+        public static Fraction operator --(Fraction obj)
+        {
+            obj.Integer--;
+            return obj;
+        }
 
         //              Methods:
         Fraction Proper()

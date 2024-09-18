@@ -32,15 +32,19 @@ namespace Fraction
             Fraction A = new Fraction(2, 3, 4);
             Fraction B = new Fraction(3, 4, 5);
             Fraction C = new Fraction(A * B);
+            Fraction D = new Fraction();
+            Fraction E = new Fraction();
             A.Print();
             B.Print();
             C.Print();
-            Fraction D = A / B;
-            Console.Write($"Деление: \t "); D.Print();
-            C = A + B;
-            Console.Write($"Сложение: \t "); C.Print();
-            C = B - A;
-            Console.Write($"Вычитание: \t "); C.Print();
+            Console.WriteLine($"Умножение: \t{E = B * A}");
+            Console.WriteLine($"Деление: \t{D = A / B} ");
+            Console.WriteLine($"Сложение: \t{C = A + B}"); 
+            Console.WriteLine($"Вычитание: \t{C = B - A}");
+            Console.WriteLine($"Increment =\t{A++}");
+            Console.WriteLine($"Decrement =\t{--A}");
+
+
         }
     }
 }
