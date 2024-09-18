@@ -127,11 +127,23 @@ namespace Fraction
             obj.Integer--;
             return obj;
         }
-        public static Fraction operator +=(Fraction obj)
-        {
-            
-        }
-
+        //public static Fraction operator +=(Fraction obj)
+        //{
+        //    this.Improper();
+        //    this.Numerator = this.Numerator + obj.Numerator;
+        //}
+        public static bool operator ==(Fraction left, Fraction right)
+            => (left.Numerator/left.Denominator == right.Numerator/right.Denominator); 
+        public static bool operator !=(Fraction left, Fraction right)
+            => (left.Numerator/left.Denominator != right.Numerator/right.Denominator);
+        public static bool operator >(Fraction left, Fraction right)
+            => (left.Numerator / left.Denominator > right.Numerator / right.Denominator);
+        public static bool operator <(Fraction left, Fraction right)
+            => (left.Numerator / left.Denominator < right.Numerator / right.Denominator);
+        public static bool operator >=(Fraction left, Fraction right)
+            => (left > right || left == right);
+        public static bool operator <=(Fraction left, Fraction right)
+            => (left < right || left == right);
         //              Methods:
         Fraction Proper()
         {
