@@ -54,6 +54,13 @@ namespace Fraction
             Console.WriteLine($" <  \t{A < C}");
             Console.WriteLine($" >= \t{A >= C}");
             Console.WriteLine($" <= \t{A <= C}");
+            A *= B;
+            Console.WriteLine(A);
+            for(Fraction i = new Fraction(1,2); i < new Fraction(10); i++)
+            {
+                Console.Write(i + "\t");
+            }
+            Console.WriteLine();
         }
     }
 }
